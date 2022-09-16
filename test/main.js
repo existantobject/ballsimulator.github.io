@@ -1,9 +1,9 @@
 let time = 0;
-let nuts = 0;
-let nutAmount = 1;
+let balls = 0;
+let ballAmount = 1;
 let combo = 1;
 let maxcombo = 3;
-let nutspersec = 0;
+let ballspersec = 0;
 let currentImage = 0;
 let level = {
 	level:0,
@@ -20,51 +20,51 @@ function Story(text, required, delay){
 
 let story = [
 	//main story
-	new Story("you wake up   after a long Sleep...   u are surrounded by  Nut.", "nuts >= 0"),
-	new Story("at middle there sstands  a buton with nut on it....", "nuts >= 0"),
-	new Story("holy cr*******p ....  u say AS A   child  climb out of  nut pile .  he offer to  Help  u collect nut... FOR a price >: )", "nuts >= 15"),
-	new Story("one hunder nut,,, lots of nut being made now...", "currentImage >= 3"),
-	new Story("good progress  soldier .", "nuts >= 500"),
-	new Story("1000 nut .  u now  run  the local Town  nut  economy .", "currentImage >= 4"),
-	new Story("THE nut  business is growing .... ", "currentImage >= 5"),
-	new Story("100 thosand nuts.  your   now becomming  known as '' da nut guy '' ", "currentImage >= 6"),
-	new Story("1  millien nuts.   the  nut production line is now  Set up ..  big thing `s comnig...", "currentImage >= 7"),
-	new Story("u become ownner of   A village    and call it '' nut  village '' ", "currentImage >= 8"),
-	new Story("nut village  is now... nut  town !  every one love you,r  nuts", "currentImage >= 9"),
-	new Story("larrge  factory  for nut production are now  made ...   with 1 billien  nuts,, nothing can Stop  You !!.", "currentImage >= 10"),
-	new Story("the hole  of australia  is now yours ,,  it now known as '' nutstralia'' ", "currentImage >= 11"),
-	new Story("every  city in da world  is now yours ... nuts  are tacking over the world !!!", "currentImage >= 12"),
-	new Story("the earth is no longer  known as ' the earth ' . it is now ' the nut '", "currentImage >= 13"),
-	new Story("the  journey  to the stars  is  beginnning .. rockets fuelled  by nuts will take  us  to the  Distennt worlds...", "currentImage >= 14"),
+	new Story("you wake up   after a long Sleep...   u are surrounded by  Ball.", "balls >= 0"),
+	new Story("at middle there sstands  a buton with ball on it....", "balls >= 0"),
+	new Story("holy cr*******p ....  u say AS A   child  climb out of  ball pile .  he offer to  Help  u collect ball... FOR a price >: )", "balls >= 15"),
+	new Story("one hunder ball,,, lots of ball being made now...", "currentImage >= 3"),
+	new Story("good progress  soldier .", "balls >= 500"),
+	new Story("1000 ball .  u now  run  the local Town  ball  economy .", "currentImage >= 4"),
+	new Story("THE ball  business is growing .... ", "currentImage >= 5"),
+	new Story("100 thosand balls.  your   now becomming  known as '' da ball guy '' ", "currentImage >= 6"),
+	new Story("1  millien balls.   the  ball production line is now  Set up ..  big thing `s comnig...", "currentImage >= 7"),
+	new Story("u become ownner of   A village    and call it '' ball  village '' ", "currentImage >= 8"),
+	new Story("ball village  is now... ball  town !  every one love you,r  balls", "currentImage >= 9"),
+	new Story("larrge  factory  for ball production are now  made ...   with 1 billien  balls,, nothing can Stop  You !!.", "currentImage >= 10"),
+	new Story("the hole  of australia  is now yours ,,  it now known as '' ballstralia'' ", "currentImage >= 11"),
+	new Story("every  city in da world  is now yours ... balls  are tacking over the world !!!", "currentImage >= 12"),
+	new Story("the earth is no longer  known as ' the earth ' . it is now ' the ball '", "currentImage >= 13"),
+	new Story("the  journey  to the stars  is  beginnning .. rockets fuelled  by balls will take  us  to the  Distennt worlds...", "currentImage >= 14"),
 	new Story("deep into the  galaxies  now..    we  ar e getting  close ...", "currentImage >= 15"),
-	new Story("i can sense......... the  Nut,,", "currentImage >= 16"),
-	new Story("we now know what is in  singularity   of black hole ,,, answer:  nut", "currentImage >= 17"),
-	new Story("a nut   planet  has been found.  .. we  cannot stop here  thogh....", "currentImage >= 18"),
-	new Story("this   is it........ the  nut galaxy ...", "currentImage >= 19"),
-	new Story("we cannot  stop  now . it is  inevitable .... the  nut is  upon us", "currentImage >= 20"),
-	new Story("we have  reached it.. nut heaven.  this is where  dreams come true .  all the nuts  u want ,,  what a paradise", "currentImage >= 21"),
-	new Story("oh  no ........ we have made  too many nuts ..... welcome ...........t o  nut  hell........", "currentImage >= 22"),
+	new Story("i can sense......... the  Ball,,", "currentImage >= 16"),
+	new Story("we now know what is in  singularity   of black hole ,,, answer:  ball", "currentImage >= 17"),
+	new Story("a ball   planet  has been found.  .. we  cannot stop here  thogh....", "currentImage >= 18"),
+	new Story("this   is it........ the  ball galaxy ...", "currentImage >= 19"),
+	new Story("we cannot  stop  now . it is  inevitable .... the  ball is  upon us", "currentImage >= 20"),
+	new Story("we have  reached it.. ball heaven.  this is where  dreams come true .  all the balls  u want ,,  what a paradise", "currentImage >= 21"),
+	new Story("oh  no ........ we have made  too many balls ..... welcome ...........t o  ball  hell........", "currentImage >= 22"),
 	
-	//nut types
-	new Story("your  new homie gladly  takes your Nuts  and goes  out to colect  more . ", "nutTypes[0].bought > 0"),
-	new Story("5 kids  Now are in the clan...", "nutTypes[0].bought >= 5"),
-	new Story("a boy join the nut Gang... ", "nutTypes[1].bought >= 1"),
-	new Story("a man   help out getting nuts .. ", "nutTypes[2].bought >= 1"),
-	new Story("you start up a farm for making  Nuts ..", "nutTypes[3].bought >= 1"),
-	new Story("nut factory!!  this will bring in a lot of nuts ...", "nutTypes[4].bought >= 1"),
-	new Story("nuts are now the local   currency .  you start up a bank", "nutTypes[5].bought >= 1"),
-	new Story("you begin a nut empire . nothing will stop  you", "nutTypes[6].bought >= 1"),
-	new Story("you now control all the nuts in the world.   good  Job", "nutTypes[7].bought >= 1"),
-	new Story("you now produce nuts for the whole galaxy", "nutTypes[8].bought >= 1"),
-	new Story("the legendary  '' deez  Nut'' guy come and help teach you  how to  make the finest quality nuts you ,ve ever seen", "nutTypes[9].bought >= 1"),
-	new Story("your  new nuts allow  you to travel back in time   ,", "nutTypes[10].bought >= 1"),
-	new Story("the whole universe  now gets their nuts from you .", "nutTypes[11].bought >= 1"),
-	new Story("the nut religion is now the  only religion  , with 100% of  life forms following it", "nutTypes[12].bought >= 1"),
-	new Story("your nuts  have now allowed you to  defeat  death and live  in nut paradise .", "nutTypes[13].bought >= 1"),
+	//ball types
+	new Story("your  new homie gladly  takes your Balls  and goes  out to colect  more . ", "ballTypes[0].bought > 0"),
+	new Story("5 kids  Now are in the clan...", "ballTypes[0].bought >= 5"),
+	new Story("a boy join the ball Gang... ", "ballTypes[1].bought >= 1"),
+	new Story("a man   help out getting balls .. ", "ballTypes[2].bought >= 1"),
+	new Story("you start up a farm for making  Balls ..", "ballTypes[3].bought >= 1"),
+	new Story("ball factory!!  this will bring in a lot of balls ...", "ballTypes[4].bought >= 1"),
+	new Story("balls are now the local   currency .  you start up a bank", "ballTypes[5].bought >= 1"),
+	new Story("you begin a ball empire . nothing will stop  you", "ballTypes[6].bought >= 1"),
+	new Story("you now control all the balls in the world.   good  Job", "ballTypes[7].bought >= 1"),
+	new Story("you now produce balls for the whole galaxy", "ballTypes[8].bought >= 1"),
+	new Story("the legendary  '' deez  Ball'' guy come and help teach you  how to  make the finest quality balls you ,ve ever seen", "ballTypes[9].bought >= 1"),
+	new Story("your  new balls allow  you to travel back in time   ,", "ballTypes[10].bought >= 1"),
+	new Story("the whole universe  now gets their balls from you .", "ballTypes[11].bought >= 1"),
+	new Story("the ball religion is now the  only religion  , with 100% of  life forms following it", "ballTypes[12].bought >= 1"),
+	new Story("your balls  have now allowed you to  defeat  death and live  in ball paradise .", "ballTypes[13].bought >= 1"),
 
 ];
 
-function Nut(name, cost, amount){
+function Ball(name, cost, amount){
 	this.name = name;
 	this.cost = cost;
 	this.bought = 0;
@@ -72,43 +72,43 @@ function Nut(name, cost, amount){
 	this.unlocked = false;
 }
 
-let nutTypes = [
-	new Nut("nut kid", 15, 0.1),
-	new Nut("nut boy", 50, 8),
-	new Nut("nut man", 1000, 47),
-	new Nut("nut farm", 13000, 260),
-	new Nut("nut factory", 150000, 1400),
-	new Nut("nut bank", 1400000, 7800),
-	new Nut("nut empire", 20000000, 44000),
-	new Nut("world nut control", 330000000, 260000),
-	new Nut("galactic nut reign", 1500000000, 1600000),
-	new Nut("deez nut guy", 75000000000, 10000000),
-	new Nut("time travelling nuts", 1000000000000, 65000000),
-	new Nut("universal nut domination", 40000000000000, 1),
-	new Nut("nut god", 170000000000000, 430000000),
-	new Nut("nut afterlife", 1000000000000000, 2900000000)
+let ballTypes = [
+	new Ball("ball kid", 15, 0.1),
+	new Ball("ball boy", 50, 8),
+	new Ball("ball man", 1000, 47),
+	new Ball("ball farm", 13000, 260),
+	new Ball("ball factory", 150000, 1400),
+	new Ball("ball bank", 1400000, 7800),
+	new Ball("ball empire", 20000000, 44000),
+	new Ball("world ball control", 330000000, 260000),
+	new Ball("galactic ball reign", 1500000000, 1600000),
+	new Ball("deez ball guy", 75000000000, 10000000),
+	new Ball("time travelling balls", 1000000000000, 65000000),
+	new Ball("universal ball domination", 40000000000000, 1),
+	new Ball("ball god", 170000000000000, 430000000),
+	new Ball("ball afterlife", 1000000000000000, 2900000000)
 ]
 
-function updatenutcolours(){
-	let inc = 360/nutTypes.length;
-	nutTypes.forEach((e, i) => {
+function updateballcolours(){
+	let inc = 360/ballTypes.length;
+	ballTypes.forEach((e, i) => {
 		e.colour = "hsl(" + (inc*i+1) + ", 81%, 38%)";
 	});
 }
-updatenutcolours();
+updateballcolours();
 
-function buy(nut){
-	if(nuts >= nut.cost){
-		nuts -= nut.cost;
-		nut.cost = Math.floor(nut.cost * Math.pow(1.1, nut.bought));
-		nut.bought++;
+function buy(ball){
+	if(balls >= ball.cost){
+		balls -= ball.cost;
+		ball.cost = Math.floor(ball.cost * Math.pow(1.1, ball.bought));
+		ball.bought++;
 		update();
 	}
 }
 
-function totalnuthelpers(){
+function totalballhelpers(){
 	let total = 0;
-	for(type of nutTypes)
+	for(type of ballTypes)
 		total += type.bought;
 	return total;
 }
@@ -117,8 +117,8 @@ let started;
 let clicks = 0;
 let clicking = false;
 let resetTimeoutHandle;
-const nutSound = new Audio("nut.wav");
-function clicknut(){
+const ballSound = new Audio("ball.wav");
+function clickball(){
 	//cps
 	clicks++;
 	if(!clicking){
@@ -133,19 +133,19 @@ function clicknut(){
 		combo = maxcombo;
 
 	//do thing
-	let newAmount = nutAmount * combo;
-	nuts += newAmount;
+	let newAmount = ballAmount * combo;
+	balls += newAmount;
 
-	document.getElementById("nutclicked").style.animationName = "";
-	document.getElementById("nutclicked").innerHTML = "+" + formatnumber(newAmount);
+	document.getElementById("ballclicked").style.animationName = "";
+	document.getElementById("ballclicked").innerHTML = "+" + formatnumber(newAmount);
 	setTimeout(() => {
-		document.getElementById("nutclicked").style.animationName = "click";
-		document.getElementById("nutclicked").addEventListener("animationend", () => document.getElementById("nutclicked").style.animationName = "" );
+		document.getElementById("ballclicked").style.animationName = "click";
+		document.getElementById("ballclicked").addEventListener("animationend", () => document.getElementById("ballclicked").style.animationName = "" );
 	}, 0);
 
-	stopAudio(nutSound);
-	setTimeout(() => nutSound.play(), 0);
-	addfallingnuts(newAmount);
+	stopAudio(ballSound);
+	setTimeout(() => ballSound.play(), 0);
+	addfallingballs(newAmount);
 	level.xp += Math.floor(newAmount);
 	
 	update();
@@ -170,20 +170,20 @@ function round(num){
 	return Math.round(num * 100)/100;
 }
 
-function donuts(){ //hehe donuts XD
-	nutspersec = 0;
-	for(nut of nutTypes){
-		nutspersec += nut.bought * nut.amount;
+function doballs(){ //hehe doballs XD
+	ballspersec = 0;
+	for(ball of ballTypes){
+		ballspersec += ball.bought * ball.amount;
 	}
 
-	nutspersec = round(nutspersec);
-	if(nutspersec <= 0) return;
-	nuts += nutspersec;
+	ballspersec = round(ballspersec);
+	if(ballspersec <= 0) return;
+	balls += ballspersec;
 	level.xp += 0.5;
 
 	setTimeout(() => {
-		document.getElementById("nutpopup").style.animationName = "fadeOut";
-		document.getElementById("nutpopup").addEventListener("animationend", () => document.getElementById("nutpopup").style.animationName = "" );
+		document.getElementById("ballpopup").style.animationName = "fadeOut";
+		document.getElementById("ballpopup").addEventListener("animationend", () => document.getElementById("ballpopup").style.animationName = "" );
 	}, 0);
 
 	update();
@@ -251,24 +251,24 @@ function makeelem(parent, name, type, onclick){
 }
 
 function update(){
-	nuts = round(nuts);
+	balls = round(balls);
 
 	//stuff
-	document.getElementById("nutAmount").innerHTML = formatnumber(nuts) + (nuts == 1 ? " nut" : " nuts");
-	document.getElementById("nutpopup").innerHTML = "+" + formatnumber(nutspersec);
-	if(nutspersec > 0)
-		document.getElementById("nutspersec").innerHTML = "+" + formatnumber(nutspersec) + "/sec";
+	document.getElementById("ballAmount").innerHTML = formatnumber(balls) + (balls == 1 ? " ball" : " balls");
+	document.getElementById("ballpopup").innerHTML = "+" + formatnumber(ballspersec);
+	if(ballspersec > 0)
+		document.getElementById("ballspersec").innerHTML = "+" + formatnumber(ballspersec) + "/sec";
 	if(combo > 1)
 		document.getElementById("combo").innerHTML = "combo: " + combo;
 
 	//bg
-	let nutImage = Math.floor(Math.log10(nuts)) + 1;
-	if(nutImage == -Infinity) nutImage = 1; //dumb
-	if(nutImage > 22) nutImage = 22;
+	let ballImage = Math.floor(Math.log10(balls)) + 1;
+	if(ballImage == -Infinity) ballImage = 1; //dumb
+	if(ballImage > 22) ballImage = 22;
 
-	if(currentImage < nutImage){
-		smoothimage(document.getElementById("bg"), "bgs/"+ nutImage +".jpg", currentImage == 0 ? 0 : 1);
-		currentImage = nutImage;
+	if(currentImage < ballImage){
+		smoothimage(document.getElementById("bg"), "bgs/"+ ballImage +".jpg", currentImage == 0 ? 0 : 1);
+		currentImage = ballImage;
 	}
 
 	//story
@@ -279,45 +279,45 @@ function update(){
 			message.unlocked = Date.now();
 
 			let time = new Date();
-			time = time.toLocaleString("en-US", { hour:"numeric", minute:"numeric", hour12:true });
+			time = time.toLocaleString("en-US", { hour:"numeric", miballe:"numeric", hour12:true });
 			message.fulltext = time + ": " + message.text;
 		}
 	}
 
-	//update nut-related things
-	for(nut of nutTypes){
+	//update ball-related things
+	for(ball of ballTypes){
 		//unlocking
-		if(!nut.unlocked && nuts >= nut.cost)
-			nut.unlocked = true;
+		if(!ball.unlocked && balls >= ball.cost)
+			ball.unlocked = true;
 
 		////////////////info////////////////
-		let infoName = nut.name + " info";
-		makeelem(document.getElementById("nutHelpers"), infoName, "div");
+		let infoName = ball.name + " info";
+		makeelem(document.getElementById("ballHelpers"), infoName, "div");
 
 		let infoElem = document.getElementById(infoName);
-		if(infoElem.classList.contains("hidden") && nut.unlocked)
+		if(infoElem.classList.contains("hidden") && ball.unlocked)
 			infoElem.classList.remove("hidden");
 
-		let nps = round(nut.bought * nut.amount);
-		let infoText = nut.name + ": " + nut.bought + " - " + formatnumber(nps) + " n/s";
+		let nps = round(ball.bought * ball.amount);
+		let infoText = ball.name + ": " + ball.bought + " - " + formatnumber(nps) + " n/s";
 		if(infoElem.innerHTML != infoText)
 			infoElem.innerHTML = infoText;
 
 		////////////////button////////////////
-		let buttonName = nut.name + " button";
-		let current = nut; //fix scope issues
-		makeelem(document.getElementById("nuts"), buttonName, "button", () => buy(current));
+		let buttonName = ball.name + " button";
+		let current = ball; //fix scope issues
+		makeelem(document.getElementById("balls"), buttonName, "button", () => buy(current));
 
 		let buttonElem = document.getElementById(buttonName);
-		if(buttonElem.classList.contains("hidden") && nut.unlocked)
+		if(buttonElem.classList.contains("hidden") && ball.unlocked)
 			buttonElem.classList.remove("hidden");
 
 		if(!buttonElem.style.backgroundColor)
-			buttonElem.style.backgroundColor = nut.colour;
+			buttonElem.style.backgroundColor = ball.colour;
 
-		let buttonText = nut.name + "<br>" +
-		"(+" + formatnumber(nut.amount) + " nuts/sec)" + "<br>" +
-		"cost: " + formatnumber(nut.cost) + " nuts";
+		let buttonText = ball.name + "<br>" +
+		"(+" + formatnumber(ball.amount) + " balls/sec)" + "<br>" +
+		"cost: " + formatnumber(ball.cost) + " balls";
 		if(buttonElem.innerHTML != buttonText)
 			buttonElem.innerHTML = buttonText;
 	}
@@ -350,27 +350,27 @@ function updatetime(){
 }
 
 setInterval(function(){
-	donuts();
+	doballs();
 	updatetime();
 }, 1000);
 
-let canvas = document.getElementById("nutcanvas");
+let canvas = document.getElementById("ballcanvas");
 let ctx = canvas.getContext("2d");
-let fallingnuts = [];
+let fallingballs = [];
 
-function addfallingnuts(amount){
+function addfallingballs(amount){
 	amount = Math.floor(amount);
 	if(amount > 10)
 		amount = 10;
 
 	for(let i=0;i<amount;i++){
 		setTimeout(() => {
-			fallingnuts.push(new fallingnut);
+			fallingballs.push(new fallingball);
 		}, i * 15)
 	}
 }
 
-function fallingnut(){
+function fallingball(){
 	this.w = 50;
 	this.h = 50;
 
@@ -380,8 +380,8 @@ function fallingnut(){
 	this.gravity = 0.4;
 }
 
-let nutimg = new Image();
-nutimg.src = "nut.png";
+let ballimg = new Image();
+ballimg.src = "ball.png";
 
 function animatebg(){
 	canvas.width = document.getElementById("container").offsetWidth;
@@ -389,22 +389,22 @@ function animatebg(){
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	ctx.globalAlpha = 0.5;
-	for(let i=fallingnuts.length-1;i>=0;i--){
-		let nut = fallingnuts[i];
+	for(let i=fallingballs.length-1;i>=0;i--){
+		let ball = fallingballs[i];
 
-		ctx.drawImage(nutimg, nut.x, nut.y, nut.w, nut.h);
-		nut.yvel += nut.gravity;
-		nut.y += nut.yvel;
+		ctx.drawImage(ballimg, ball.x, ball.y, ball.w, ball.h);
+		ball.yvel += ball.gravity;
+		ball.y += ball.yvel;
 
-		if(nut.y > canvas.height)
-			fallingnuts.splice(i, 1);
+		if(ball.y > canvas.height)
+			fallingballs.splice(i, 1);
 	}
 
 	requestAnimationFrame(animatebg);
 }
 
 function init(){
-	smoothimage(document.getElementById("nut"), "nut.png", 0, [document.getElementById("container")]);
+	smoothimage(document.getElementById("ball"), "ball.png", 0, [document.getElementById("container")]);
 	load();
 	update();
 	updatetime();
@@ -416,11 +416,11 @@ function init(){
 
 function save(){
 	let save = {
-		nuts:nuts,
+		balls:balls,
 		time:time,
 		level:level,
 
-		nutTypes:nutTypes,
+		ballTypes:ballTypes,
 		story:story,
 	};
 
@@ -437,12 +437,12 @@ function load(){
 	let save = localStorage.getItem("save");
 	if(save){
 		save = JSON.parse(save);
-		if (typeof save.nuts !== "undefined") nuts = save.nuts;
+		if (typeof save.balls !== "undefined") balls = save.balls;
 		if (typeof save.time !== "undefined") time = save.time;
 		if (typeof save.level !== "undefined") level = save.level;
 
-		if (typeof save.nutTypes !== "undefined")
-			checksave(nutTypes, save.nutTypes);
+		if (typeof save.ballTypes !== "undefined")
+			checksave(ballTypes, save.ballTypes);
 
 		if (typeof save.story !== "undefined")
 			checksave(story, save.story);
@@ -495,12 +495,12 @@ function formatnumber(number){
 function parseS(s){
 	let delim = ":";
 	let hours = Math.floor(s / (60 * 60) % 60);
-	let minutes = Math.floor(s / 60 % 60);
+	let miballes = Math.floor(s / 60 % 60);
 	let seconds = Math.floor(s % 60);
 	hours = hours < 10 ? "0" + hours : hours;
-	minutes = minutes < 10 ? "0" + minutes : minutes;
+	miballes = miballes < 10 ? "0" + miballes : miballes;
 	seconds = seconds < 10 ? "0" + seconds : seconds;
-	return hours + delim + minutes + delim + seconds;
+	return hours + delim + miballes + delim + seconds;
 }
 
 function lerp(val1,val2,time){
@@ -558,16 +558,16 @@ let keys = [];
 document.addEventListener("keydown", e => {
 	if(!keys[e.keyCode]){ //if it wasnt pressed last event
 		if(e.key == " ")
-			clicknut();
+			clickball();
 	}
 
 	keys[e.keyCode] = true;
 });
 
 document.addEventListener("keyup", e => keys[e.keyCode] = false);
-document.getElementById("nut").addEventListener("mousedown", e => {
+document.getElementById("ball").addEventListener("mousedown", e => {
 	if(e.button == 0)
-		clicknut();
+		clickball();
 })
 
 let expandinginterval;
