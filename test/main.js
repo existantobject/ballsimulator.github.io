@@ -299,7 +299,7 @@ function update(){
 			infoElem.classList.remove("hidden");
 
 		let nps = round(ball.bought * ball.amount);
-		let infoText = ball.name + ": " + ball.bought + " - " + formatnumber(nps) + " n/s";
+		let infoText = ball.name + ": " + ball.bought + " - " + formatnumber(nps) + " b/s";
 		if(infoElem.innerHTML != infoText)
 			infoElem.innerHTML = infoText;
 
