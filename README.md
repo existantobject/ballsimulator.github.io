@@ -1,6 +1,9 @@
-#nut simulator
-thrilling clicker game with nuts
-<br>
+# balls simulator
+
+###### or ball simulator
+
+thrilling clicker game with balls
+
 play it here!!
-<br>
-https://nutsimulator.github.io
+
+https://ballsimulator.github.io
