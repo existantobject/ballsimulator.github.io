@@ -30,7 +30,7 @@ main {
 	cursor: default;
 }
 
-#nutsim {
+#ballsim {
 	font-size: 8vw;
 	position: absolute;
 	top:10px;
@@ -77,7 +77,7 @@ main {
 	width: 100%;
 }
 
-#middleNut {
+#middleBall {
 	width: 80vw;
 	height: 80vw;
 	-webkit-animation: zoomIn 1s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -91,7 +91,7 @@ main {
 	cursor: pointer;
 }
 
-#middleNutCounter {
+#middleBallCounter {
 	font-weight: bold;
     right: 0px;
     left: 0px;
@@ -115,7 +115,7 @@ main {
 	opacity: 0;
 }
 
-#addedNuts {
+#addedBalls {
     right: 20%;
 	top: 16%;
     -webkit-transform: translate(-50%, -50%);
