@@ -1,6 +1,4 @@
-# balls simulator
-
-###### or ball simulator
+# ball simulator
 
 thrilling clicker game with balls
 
