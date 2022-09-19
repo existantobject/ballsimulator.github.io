@@ -1,9 +1,9 @@
 // Epic messy code Baby !!
-// Epic messy code Baby !!
-// Epic messy code Baby !!
-// Epic messy code Baby !!
-// Epic messy code Baby !!
-// Epic messy code Baby !!
+//   - f0e
+// I agree!!!
+// lol there is a staircase of code below
+// also like 1000 variables
+//   - frosetrain
 
 var balls = 0;
 var maxBalls = 0;
