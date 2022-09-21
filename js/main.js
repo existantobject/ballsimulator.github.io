@@ -71,7 +71,7 @@ var clickUpgrade2CostNext = 0;
 var allUpgradeCostNext = 0;
 var clickUpgrade3CostNext = 0;
 
-var ballKidDamage = 0.1;
+var ballKidDamage = 90498597945345689465846956359864985643958;
 var ballBoyDamage = 1;
 var ballManDamage = 8;
 var ballFarmDamage = 47;
@@ -84,7 +84,7 @@ var deezBallGuyDamage = 1600000;
 var ballTimeTravelDamage = 10000000;
 var ballUniversalDominationDamage = 65000000;
 var ballGodDamage = 430000000;
-var ballAfterlifeDamage = 2900000000;
+var ballAfterlifeDamage = 2900000000000000000000000000000000000000000000000000000000000000000000000000;
 var totalDamage = 0;
 
 var buyAudio = new Audio('audio/buy.wav');
